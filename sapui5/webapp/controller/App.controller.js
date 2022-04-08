@@ -23,9 +23,7 @@ function(Controller, MessageToast, Models, ResourceModel){
     },
 
     muestraUnHolita: function saludo(){
-        alert('Hola Holita')
       
-
         var oBundle = this.getView().getModel("i18n").getResourceBundle();
         var recipiente = this.getView().getModel().getProperty("/recipient/name")
         var mensajeAMostrar =  oBundle.getText("helloMsg", [recipiente])

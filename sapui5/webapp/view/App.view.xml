@@ -1,6 +1,19 @@
 
-<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" controllerName="com.mazquetax.sapui5.controller.App">
-<Text text="Hello"></Text>
-<Button text="{i18n>showHelloButtonText}" press="muestraUnHolita"></Button>
-<Input value="{/recipient/name}" description="Hello {/recipient/name}" width="20%"></Input>
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+displayBlock="true"
+ controllerName="com.mazquetax.sapui5.controller.App">
+ <App id="app">
+ <pages>
+ <Page id="pag1" title="{i18n>appTitle}">
+ <content>
+ <Panel id="panel" headerText="{18n>}">
+<Text id="texto" text="Hello"></Text>
+<Button id="btnSaludo" text="{i18n>showHelloButtonText}" press="muestraUnHolita"></Button>
+<Input id="nombre" value="{/recipient/name}" description="Hello {/recipient/name}" width="20%"></Input>
+</Panel>
+</content>
+</Page>
+</pages>
+
+</App>
 </mvc:View>
