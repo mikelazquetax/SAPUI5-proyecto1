@@ -13,7 +13,7 @@ sap.ui.define([
 
 */
 
-function(Controller, MessageToast, Models, ResourceModel){
+function(Controller, MessageToast){
   "use strict"
   return Controller.extend("com.mazquetax.sapui5.controller.App", {
 
@@ -21,17 +21,9 @@ function(Controller, MessageToast, Models, ResourceModel){
     onInit: function inicializadora(){
       
     },
-
-    muestraUnHolita: function saludo(){
-      
-        var oBundle = this.getView().getModel("i18n").getResourceBundle();
-        var recipiente = this.getView().getModel().getProperty("/recipient/name")
-        var mensajeAMostrar =  oBundle.getText("helloMsg", [recipiente])
-        MessageToast.show(mensajeAMostrar)
-    },  
-
-
-
+    abreDialogoHeader: function dialogoCabecera(){
+        this.getOwnerComponent().openHellodialog()
+    }
 
   });
 })

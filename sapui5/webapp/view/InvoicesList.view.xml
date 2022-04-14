@@ -1,0 +1,25 @@
+<mvc:View controllerName="com.mazquetax.sapui5.controller.InvoicesList" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+<List id="listado" headerText="{i18n>headerListTitle}" class="sapUiResponsiveMargin"
+width="auto" items="{ path: 'northwind>/Invoices', sorter: {path: 'ShipperName', group: true}}">
+<headerToolbar>
+<Toolbar id="barra">
+<SearchField id="buscador" width="50%" class="buscador" search="buscarF"></SearchField>
+</Toolbar>
+</headerToolbar>
+<items>
+<ObjectListItem id="xx" title="{northwind>Quantity} x {northwind>ProductName}"
+                number="{parts: [{path: 'northwind>ExtendedPrice'}, {path: 'divisas>/usd'}],
+                type: 'sap.ui.model.type.Currency', formatOptions: {
+                    showMeasure: false
+                }}"
+                numberUnit="{divisas>/usd}"
+                numberState="{= ${northwind>ExtendedPrice} > 50 ? 'Success' : 'Error'}">
+<!--     <firstStatus>
+    <ObjectStatus id="stat" text="{path: 'northwind>Status', formatter: '.formatter.invoiceStatus'}"></ObjectStatus>
+    </firstStatus>   -->         
+                
+</ObjectListItem>
+</items>
+
+</List>
+</mvc:View>

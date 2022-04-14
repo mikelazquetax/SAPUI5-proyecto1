@@ -9,15 +9,22 @@
     },
     "title": "{{appTitle}}",
     "description": "{{appDescription}}",
-    "resources": "resources.json",
+  
     "dataSources": {
-      "mainService": {
-        "uri": "/sap/opu/odata/",
+        "mainService": {
+            "uri": "/sap/opu/odata/",
+            "type": "OData",
+            "settings": {
+              "annotations": [],
+              "localUri": "localService/metadata.xml",
+              "odataVersion": "4.0"
+            }},
+        "Northwind.svc": {
+        "uri": "/V2/Northwind/Northwind.svc/",
         "type": "OData",
         "settings": {
-          "annotations": [],
-          "localUri": "localService/metadata.xml",
-          "odataVersion": "4.0"
+          "odataVersion": "2.0",
+          "localUri": "localService/metadata.xml"
         }
       }
     }
@@ -64,22 +71,24 @@
           "bundleName": "com.mazquetax.sapui5.i18n.i18n"
         }
       },
-      "": {
-        "dataSource": "mainService",
+      "invoicesx": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "invoices.json"
+      },
+      "northwind": {
+        "dataSource": "Northwind.svc",
         "preload": true,
         "settings": {
-          "synchronizationMode": "None",
-          "operationMode": "Server",
-          "autoExpandSelect": true,
-          "earlyRequests": true,
-          "groupId": "$direct"
+          "defaultBindingMode": "TwoWay",
+          "defaultCountMode": "Inline",
+          "refreshAfterChange": false
         }
       }
     },
     "resources": {
       "css": [
         {
-          "uri": "css/style.css"
+          "uri": "css/styles.css"
         }
       ]
     },

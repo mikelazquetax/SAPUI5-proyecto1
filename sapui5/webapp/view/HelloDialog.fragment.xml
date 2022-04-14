@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+<Dialog id="helloPanel" title="Hello {/recipient/name}">
+<content>
+<core:Icon id="mierda" src="sap-icon://hello-world" size="250%"/>
+</content>
+<beginButton>
+    <Button id="cierre" text="{i18n>dialogCloseBut}" press="cerrarDialogo"></Button>
+</beginButton>
+
+</Dialog>
+</core:FragmentDefinition>
